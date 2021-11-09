@@ -14,8 +14,12 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
-app.get("/resume", function(req, res){
+app.get("/index", function(req, res){
     res.render("index");
+});
+
+app.get("/resume", function(req, res){
+    res.render("resume");
 });
 
 
