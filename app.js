@@ -22,6 +22,10 @@ app.get("/resume", function(req, res){
     res.render("resume");
 });
 
+app.get("/createresume", function(req, res){
+    res.render("createResume");
+});
+
 
 app.listen(3000, function(){
     console.log("Resume Builder app has started!");
