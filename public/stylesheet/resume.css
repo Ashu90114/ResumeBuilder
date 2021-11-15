@@ -56,3 +56,29 @@
 [data-background-color="orange"] {
     background-color: #708090;
 }
+
+#bodycol{
+    background-color: #f5f3f4;
+}
+
+#highlight1{
+    background-color: #cddafd;
+}
+
+#highlight2{
+    background-color:  #fbf8cc;
+     
+}
+
+#highlight3{
+    background-color: #bde0fe;
+    
+}
+
+#do{
+    background-color: #bee3db;
+}
+
+#dont{
+    background-color: #fad2e1;
+}

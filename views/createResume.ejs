@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="mt-4 mb-5 text-center">
-            <button onclick="generateCv()" class="btn btn-dark bt-lg text-light">Build Resume</button>
+            <button onclick="generateCV()" class="btn btn-dark bt-lg text-light">Build Resume</button>
         </div>
     </section>
 </div>
@@ -129,7 +129,7 @@
     </nav>
 </header>
 
-<main class="l-main bd-container">
+<main class="l-main bd-container" id="cv-template">
     <!-- All elements within this div, is generated in PDF -->
     <div class="resume" id="area-cv">
         <div class="resume__left">
@@ -143,14 +143,17 @@
                         <h3 class="home__profession">Web Developer</h3>
                     </div>
                     <div class="home__address bd-grid">
-                        <span class="home__information addressT">
-                            <i class='bx bxs-map home_icon'></i>Av. Bolivar #123 Lima - Peru
+                        <span class="home__information ">
+                            <i class='bx bxs-map home_icon'></i>
+                            <span id="addressT"> Av. Bolivar #123 Lima - Peru</span> 
                         </span>
                         <span class="home__information ">
-                            <i class='bx bx-envelope home_icon'></i>user@gmail.com
+                            <i class='bx bx-envelope home_icon'></i>
+                            <span id="gmailT">user@gmail.com</span> 
                         </span>
-                        <span class="home__information" id="contactT">
-                            <i class='bx bx-phone home_icon'></i> 999-888-7777
+                        <span class="home__information" >
+                            <i class='bx bx-phone home_icon'></i>
+                            <span id="contactT"> 999-888-7777 </span> 
                         </span>
                     </div>
                 </div>
@@ -161,6 +164,7 @@
                 <div>
                     <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i>
                     <!-- <a download="" href="assets/pdf/ResumeCv.pdf" class="home__button-movil">Download</a> -->
+                    <button onclick="printCV()" class="home__button-movil" >Download</button>
                 </div>
             </section>
 
@@ -195,7 +199,7 @@
             <section class="education section" id="education">
                 <h2 class="section-title">Education</h2>
 
-                <div class="edutcation__container bd-grid">
+                <div class="edutcation__container bd-grid" id="aqT">
                     <div class="education__content">
                         <div class="education__time">
                             <span class="education__rounder"></span>
@@ -281,7 +285,7 @@
             <section class="experience section" id="experience">
                 <h2 class="section-title">Experience</h2>
 
-                <div class="experience__container bd-grid">
+                <div class="experience__container bd-grid" id="weT">
                     <div class="experience__content">
                         <div class="experience__time">
                             <span class="experience__rounder"></span>
@@ -289,9 +293,9 @@
                         </div>
 
                         <div class="experience__data bd-grid">
-                            <h3 id="weT" class="experience__title">MASTER OF DESIGN</h3>
+                            <h3  class="experience__title" >MASTER OF DESIGN</h3>
                             <span class="experience__company">From 2013 to 2015 | Tech Soft</span>
-                            <p class="experience__description">Work in this company dedicating the best
+                            <p  class="experience__description">Work in this company dedicating the best
                                 responsibility in the area that corresponds, delivering the best results for the
                                 company and improving productivity.
                             </p>

@@ -24,6 +24,61 @@ function addNewAQField(){
     aqOb.insertBefore(newNode, aqAddButtonOb);
 }
 
+//generating cv
+function generateCV() {
+    // console.log("Generating cv");
+
+    let nameField=document.getElementById("nameField").value;
+    
+    let nameT=document.getElementById("nameT");
+
+    nameT.innerHTML = nameField;
+
+
+    //direct
+    document.getElementById("contactT").innerHTML=document.getElementById("contactField").value;
+
+    document.getElementById("addressT").innerHTML=document.getElementById("addressField").value;
+
+    document.getElementById("profileT").innerHTML=document.getElementById("profileField").value;
+
+
+    //WorkExperience
+    let wes=document.getElementsByClassName("weField");
+
+    let str='';
+
+    for(let e of wes){
+        str=str+`<li> ${e.value}</li>`;
+    }
+
+    document.getElementById("weT").innerHTML=str;
+
+
+    //aq
+    let aqs=document.getElementsByClassName("aqField");
+
+    let str1="";
+
+    for (let e of aqs){
+        str1+=`<li> ${e.value} </li>`;
+    }
+
+    document.getElementById("aqT").innerHTML=str1;
+
+
+
+    document.getElementById("cv-form").style.display="none";
+    document.getElementById("cv-template").style.display="block";
+
+}
+
+function printCV(){
+    window.print();
+}
+
+
+
 
 
 

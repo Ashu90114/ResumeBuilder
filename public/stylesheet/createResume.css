@@ -2,6 +2,13 @@
     background-color: #000000;
 }
 
+#cv-form{
+  /* display: none; */
+}
+
+#cv-template{
+  display: none;
+}
 
 /* ========template code====== */
 /*===== GOOGLE FONTS =====*/
@@ -554,7 +561,7 @@ img{
 /* Classes modified for large screen size */
 @media screen and (min-width: 968px){
   body{
-    margin: 3rem 0;
+    margin: .01rem 0;
   }
 
   .bd-container{
