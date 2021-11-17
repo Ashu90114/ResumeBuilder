@@ -10,6 +10,17 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.get("/login", function(req,res){
+    res.render("models/login");
+});
+
+app.get("/signup", function(req,res){
+    res.render("models/register");
+});
+
+
 app.get("/", function(req, res){
     res.render("home");
 });
