@@ -12,17 +12,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get("/login", function(req,res){
-    res.render("models/login");
-});
-
-app.get("/signup", function(req,res){
-    res.render("models/register");
-});
-
-
 app.get("/", function(req, res){
     res.render("home");
+});
+
+app.get("/login", function(req,res){
+    res.render("login");
 });
 
 app.get("/index", function(req, res){
@@ -41,3 +36,7 @@ app.get("/createresume", function(req, res){
 app.listen(3000, function(){
     console.log("Resume Builder app has started!");
 });
+
+
+
+
