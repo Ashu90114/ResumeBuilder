@@ -13,6 +13,11 @@
                         <input type="text" id="nameField" class="form-control" name="fname" placeholder="Enter your full name here!" required>
                     </div>
 
+                    <div class=" form-group mt-2">
+                        <label for="emailField">Email</label>
+                        <input type="email" id="emailField" class="form-control" name="email" placeholder="Enter your email here!" required>
+                    </div>
+                    
                     <div class="form-group mt-2">
                         <label for="contactField">Contact Number</label>
                         <input type="text" id="contactField" class="form-control" name="cnumber" placeholder="Enter your contact number here!" required>
@@ -49,14 +54,25 @@
                     </div>
                     <div class="form-group mt-2 mb-2" id="we">
                         <label for="Experience">Work Experience</label>
-                        <textarea type="text" class="form-control weField" name="experience" placeholder="Enter here!"></textarea>
+                        
+                        <input id="company" type="text" class="form-control weField" name="companyName" placeholder="Enter company name!">
+                        <input id="exyear" type="text" class="form-control weField" name="exyear" placeholder="Enter Fromyear - Toyear">
+                        <textarea id="aboutcompany" type="text" class="form-control weField" name="experience" placeholder="Enter here!"></textarea>
+                        
+                        
                         <div class="text-center mt-1" id="weAddButton">
                             <button onclick="addNewWEField()" class="btn btn-secondary bt-lg">Add</button>
                         </div>
                     </div>
+
+
                     <div class="form-group mt-2" id="aq">
                         <label for="qualification">Acadmic Qualification</label>
-                        <textarea type="text" class="form-control aqField" name="quali" placeholder="Enter here!"></textarea>
+
+                        <input id="eTitle" type="text" class="form-control aqField" name="etitle" placeholder="Enter title">
+                        <input id="institute" type="text" class="form-control aqField" name="institute" placeholder="Enter Institute!">
+                        <input id="eYear" type="text" class="form-control aqField" name="eyear" placeholder="Enter yearfrom - toyear">
+
                         <div class="text-center mt-1" id="aqAddButton">
                             <button onclick="addNewAQField()" class="btn btn-secondary bt-lg">Add</button>
                         </div>
@@ -149,7 +165,7 @@
                         </span>
                         <span class="home__information ">
                             <i class='bx bx-envelope home_icon'></i>
-                            <span id="gmailT">user@gmail.com</span> 
+                            <span id="emailT">user@gmail.com</span> 
                         </span>
                         <span class="home__information" >
                             <i class='bx bx-phone home_icon'></i>
@@ -199,16 +215,16 @@
             <section class="education section" id="education">
                 <h2 class="section-title">Education</h2>
 
-                <div class="edutcation__container bd-grid" id="aqT">
+                <div class="edutcation__container bd-grid">
                     <div class="education__content">
                         <div class="education__time">
                             <span class="education__rounder"></span>
                             <span class="education__line"></span>
                         </div>
                         <div class="education__data bd-grid">
-                            <h3 class="education__title">MASTER OF DESIGN</h3>
-                            <span class="education__studies">University of Studies</span>
-                            <span class="education__year">2010-2015</span>
+                            <h3 class="education__title" id="titleT">MASTER OF DESIGN</h3>
+                            <span class="education__studies" id="instituteT">University of Studies</span>
+                            <span class="education__year" id="yearT">2010-2015</span>
                         </div>
                     </div>
 
@@ -293,9 +309,9 @@
                         </div>
 
                         <div class="experience__data bd-grid">
-                            <h3  class="experience__title" >MASTER OF DESIGN</h3>
-                            <span class="experience__company">From 2013 to 2015 | Tech Soft</span>
-                            <p  class="experience__description">Work in this company dedicating the best
+                            <h3  class="experience__title" id="companyT" >MASTER OF DESIGN</h3>
+                            <span class="experience__company" id="exyearT">From 2013 to 2015 | Tech Soft</span>
+                            <p  class="experience__description" id="aboutcompanyT">Work in this company dedicating the best
                                 responsibility in the area that corresponds, delivering the best results for the
                                 company and improving productivity.
                             </p>

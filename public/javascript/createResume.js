@@ -1,27 +1,65 @@
 function addNewWEField(){ 
-
+    let newTitle = document.createElement("input");
+    let newYear = document.createElement("input");
     let newNode = document.createElement("textarea");
+
+
+    newTitle.classList.add("form-control");
+    newTitle.classList.add("weField");
+    newTitle.classList.add("mt-2");
+    newTitle.setAttribute("placeholder","Enter Company Name");
+
+    newYear.classList.add("form-control");
+    newYear.classList.add("weField");
+    newYear.classList.add("mt-2");
+    newYear.setAttribute("placeholder","Enter yearfrom - toyear");
+
     newNode.classList.add("form-control");
     newNode.classList.add("weField");
     newNode.classList.add("mt-2");
-    newNode.setAttribute("placeholder","Enter here");
+    newNode.setAttribute("placeholder","Enter Job descriYear");
+
+
+
     let weOb=document.getElementById("we");
     let weAddButtonOb = document.getElementById("weAddButton"); 
 
+    weOb.insertBefore(newTitle, weAddButtonOb);
+    weOb.insertBefore(newYear, weAddButtonOb);
     weOb.insertBefore(newNode, weAddButtonOb);
 }
 
 function addNewAQField(){ 
 
-    let newNode = document.createElement("textarea");
+    let newNode = document.createElement("input");
+    let newTitle = document.createElement("input");
+    let newYear = document.createElement("input");
+
+    newTitle.classList.add("aqTitle");
+    newTitle.setAttribute("placeholder", "Enter Title");
+    newTitle.classList.add("form-control");
+    newTitle.classList.add("aqField");
+    newTitle.classList.add("mt-2");
+
+    newYear.classList.add("aqTitle");
     newNode.classList.add("form-control");
     newNode.classList.add("aqField");
     newNode.classList.add("mt-2");
-    newNode.setAttribute("placeholder","Enter here");
+    newNode.setAttribute("placeholder","Enter institute");
+
+    newYear.classList.add("aqTitle");
+    newYear.setAttribute("placeholder", "Enter yearfrom - toyear");
+    newYear.classList.add("form-control");
+    newYear.classList.add("aqField");
+    newYear.classList.add("mt-2");
+
     let aqOb=document.getElementById("aq");
     let aqAddButtonOb = document.getElementById("aqAddButton"); 
 
+    aqOb.insertBefore(newTitle, aqAddButtonOb);
     aqOb.insertBefore(newNode, aqAddButtonOb);
+    aqOb.insertBefore(newYear, aqAddButtonOb);
+    
 }
 
 //generating cv
@@ -42,30 +80,42 @@ function generateCV() {
 
     document.getElementById("profileT").innerHTML=document.getElementById("profileField").value;
 
+    document.getElementById("emailT").innerHTML=document.getElementById("emailField").value;
 
     //WorkExperience
     let wes=document.getElementsByClassName("weField");
 
-    let str='';
+    let stri1="";
+    let stri2="";
+    let stri3="";
 
     for(let e of wes){
-        str=str+`<li> ${e.value}</li>`;
+        stri1 = document.getElementById("company").value;
+        stri2 = document.getElementById("exyear").value;
+        stri3 = document.getElementById("aboutcompany").value;
     }
 
-    document.getElementById("weT").innerHTML=str;
+    document.getElementById("companyT").innerHTML=stri1;
+    document.getElementById("exyearT").innerHTML=stri2;
+    document.getElementById("aboutcompanyT").innerHTML=stri3;
 
 
     //aq
     let aqs=document.getElementsByClassName("aqField");
 
     let str1="";
+    let str2="";
+    let str3="";
 
     for (let e of aqs){
-        str1+=`<li> ${e.value} </li>`;
+        str1=document.getElementById("eTitle").value;
+        str2=document.getElementById("institute").value;
+        str3=document.getElementById("eYear").value;
     }
 
-    document.getElementById("aqT").innerHTML=str1;
-
+    document.getElementById("titleT").innerHTML=str1;
+    document.getElementById("instituteT").innerHTML=str2;
+    document.getElementById("yearT").innerHTML=str3;
 
 
     document.getElementById("cv-form").style.display="none";
