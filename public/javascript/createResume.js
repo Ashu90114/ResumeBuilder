@@ -11,12 +11,10 @@ function addNewWEField(){
 
     newYear.classList.add("form-control");
     newYear.classList.add("weField");
-    newYear.classList.add("mt-2");
     newYear.setAttribute("placeholder","Enter yearfrom - toyear");
 
     newNode.classList.add("form-control");
     newNode.classList.add("weField");
-    newNode.classList.add("mt-2");
     newNode.setAttribute("placeholder","Enter Job descriYear");
 
 
@@ -44,14 +42,12 @@ function addNewAQField(){
     newYear.classList.add("aqTitle");
     newNode.classList.add("form-control");
     newNode.classList.add("aqField");
-    newNode.classList.add("mt-2");
     newNode.setAttribute("placeholder","Enter institute");
 
     newYear.classList.add("aqTitle");
     newYear.setAttribute("placeholder", "Enter yearfrom - toyear");
     newYear.classList.add("form-control");
     newYear.classList.add("aqField");
-    newYear.classList.add("mt-2");
 
     let aqOb=document.getElementById("aq");
     let aqAddButtonOb = document.getElementById("aqAddButton"); 
@@ -84,38 +80,30 @@ function generateCV() {
 
     //WorkExperience
     let wes=document.getElementsByClassName("weField");
-
-    let stri1="";
-    let stri2="";
-    let stri3="";
-
+    let str1="";
     for(let e of wes){
-        stri1 = document.getElementById("company").value;
-        stri2 = document.getElementById("exyear").value;
-        stri3 = document.getElementById("aboutcompany").value;
+        str1 +=`<li> ${e.value} <br> </li>`;
     }
-
-    document.getElementById("companyT").innerHTML=stri1;
-    document.getElementById("exyearT").innerHTML=stri2;
-    document.getElementById("aboutcompanyT").innerHTML=stri3;
-
+  
+    document.getElementById("expp").innerHTML=str1;
 
     //aq
     let aqs=document.getElementsByClassName("aqField");
-
-    let str1="";
     let str2="";
-    let str3="";
-
     for (let e of aqs){
-        str1=document.getElementById("eTitle").value;
-        str2=document.getElementById("institute").value;
-        str3=document.getElementById("eYear").value;
+        str2 +=`<li> ${e.value} <br> </li>`;
     }
 
-    document.getElementById("titleT").innerHTML=str1;
-    document.getElementById("instituteT").innerHTML=str2;
-    document.getElementById("yearT").innerHTML=str3;
+    document.getElementById("edu").innerHTML=str2;
+
+    //skills
+    var markedCheckbox = document.getElementsByName("skillField");
+    let str3="";
+    for (var e of markedCheckbox) {
+        if (e.checked)
+          str3 +=`<li>${e.value}</li>`;
+        }
+    document.getElementById("skillT").innerHTML=str3;
 
 
     document.getElementById("cv-form").style.display="none";
