@@ -8,6 +8,12 @@
         <div class="row">
             <div class="col-lg-6">
                 <h2>Personal Information</h2>
+
+                    <div class="form-group mt-3">
+                        <label for="">Select your profile photo</label>
+                        <input id="imgField" type="file" class="form-control">
+                    </div>
+
                     <div class=" form-group mt-2">
                         <label for="nameField">Full Name</label>
                         <input type="text" id="nameField" class="form-control" name="fname" placeholder="Enter your full name here!" required>
@@ -55,7 +61,7 @@
                             <li><input name="skillField" type="checkbox" id="checkboxFive" value="Firebase"><label for="checkboxFive">Firebase</label></li>
                             <li><input name="skillField" type="checkbox" id="checkboxSix" value="React" ><label for="checkboxSix">React</label></li>
                             <li><input name="skillField" type="checkbox" id="checkboxSeven" value="Git&Github"><label for="checkboxSeven">Git&Github</label></li>
-                            <li><input name="skillField" type="checkbox" id="checkboxEight" value="C++"><label for="checkboxEight">C++</label></li>
+                            <li><input name="skillField" type="checkbox" id="checkboxEight" value="C++" checked><label for="checkboxEight">C++</label></li>
                             <li><input name="skillField" type="checkbox" id="checkboxNine" value="Python"><label for="checkboxNine">Python</label></li>
                             <li><input name="skillField" type="checkbox" id="checkboxTen" value="Java"><label for="checkboxTen">Java</label></li>
                             <li><input name="skillField" type="checkbox" id="checkboxEleven" value="C#"><label for="checkboxEleven">C#</label></li>
@@ -104,6 +110,37 @@
                             <button onclick="addNewAQField()" class="btn btn-secondary bt-lg">Add</button>
                         </div>
                     </div>
+
+
+                    <div>
+                        <h5 class="mt-3">Languages's</h5>    
+                        <!-- <div>
+                            <h5 class="mt-3">Languages's  <i class="fas fa-info-circle info"></i></h5>    
+                            <span class="extra-info">
+                              A little column extra info. Aaand just a little bit more
+                            </span>   
+                        </div>
+
+                        <h2>Display an Element on Hover</h2>
+                        <div class="myDIV">Hover over me.</div>
+                        <div class="hide">I am shown when someone hovers over the div above.</div> -->
+
+
+
+                        <ul class="ks-cboxtags">
+                            <li><input name="langField" type="checkbox" id="langcheckboxOne" value="Hindi" checked><label for="langcheckboxOne">Hindi</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxTwo" value="English" checked><label for="langcheckboxTwo">English</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxThree" value="Russian" ><label for="langcheckboxThree">Russian</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxFour" value="French"><label for="langcheckboxFour">French</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxFive" value="Japanese"><label for="langcheckboxFive">Japanese</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxSix" value="German" ><label for="langcheckboxSix">German</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxSeven" value="Chinese"><label for="langcheckboxSeven">Chinese</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxEight" value="Italian"><label for="langcheckboxEight">Italian</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxNine" value="Portuguese"><label for="langcheckboxNine">Portuguese</label></li>
+                            <li><input name="langField" type="checkbox" id="langcheckboxTen" value="Turkish"><label for="langcheckboxTen">Turkish</label></li>
+                        </ul>
+                    </div>
+
             </div>
         </div>
         <div class="mt-4 mb-5 text-center">
@@ -180,8 +217,7 @@
             <section class="home" id="home">
                 <div class="home__container section bf-grid">
                     <div class="home__data bd-grid">
-                        <img src="https://as2.ftcdn.net/v2/jpg/01/18/03/33/1000_F_118033377_JKQA3UFE4joJ1k67dNoSmmoG4EsQf9Ho.jpg" alt="" class="home__img">
-
+                        <img id="imgTemplate" src="https://as2.ftcdn.net/v2/jpg/01/18/03/33/1000_F_118033377_JKQA3UFE4joJ1k67dNoSmmoG4EsQf9Ho.jpg" alt="" class="home__img">
                         <h1 class="home__title" id="nameT">Your Name</h1>
                         
                     </div>
@@ -255,24 +291,10 @@
              <section class="languages section">
                 <h2 class="section-title">Languages</h2>
 
-                <div class="languages__container">
-                    <ul class="languages__content bd-grid">
-                        
-                        <li class="languages__name">
-                            <span class="languages__circle"></span> English
-                        </li>
-                        <li class="languages__name">
-                            <span class="languages__circle"></span> Spanish
-                        </li>
-                        <li class="languages__name">
-                            <span class="languages__circle"></span> French
-                        </li>
-                        
-                    </ul>
+                <div class="languages__container" >
+                    <div class="languages__content bd-grid" id="langT"></div>
                 </div>
             </section>
-
-
 
             <!--========== INTERESTS ==========-->
             <section class="interests section">
@@ -292,12 +314,7 @@
                     <div class="interests__content">
                         <i class='bx bxs-book interests__icon'></i>
                         <span class="interests__name">Reading</span>
-                    </div>
-
-                    <div class="interests__content">
-                        <i class='bx bx-dumbbell interests__icon'></i>
-                        <span class="interests__name">Fitness</span>
-                    </div>
+                    </div>      
                 </div>
             </section>
 
@@ -388,7 +405,7 @@
                 <div class="certificate__container bd-grid">
                     <div class="certificate__content">
                         <h3 class="certificate__title">Certified for compliance in the work area (2012)
-                        </h3>
+                        </h3>   
                         <p class="certificate__description">For meeting the expectations of leading the team to work
                             the specified tasks in the labor field.
                         </p>
@@ -414,7 +431,7 @@
             </section>
 
             <!--========== REFERENCES ==========-->
-            <section class="references section" id="references">
+            <!-- <section class="references section" id="references">
                 <h2 class="section-title">References</h2>
 
                 <div class="references__container bd-grid">
@@ -436,7 +453,7 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
             
@@ -450,7 +467,7 @@
 </a>
 
 
-<div class="py-3 " id="footerbgColor">
+<div class="py-3  mt-5" id="footerbgColor">
     <section class="px-0 ">
         <div class="px-3 py-4 row align-items-center content text-center text-light">
                 <h5>Connect with us on Social media</h5>

@@ -90,8 +90,8 @@ function generateCV() {
     //aq
     let aqs=document.getElementsByClassName("aqField");
     let str2="";
-    for (let e of aqs){
-        str2 +=`<li> ${e.value} <br> </li>`;
+    for (let f of aqs){
+        str2 +=`<li> ${f.value} <br> </li>`;
     }
 
     document.getElementById("edu").innerHTML=str2;
@@ -99,15 +99,41 @@ function generateCV() {
     //skills
     var markedCheckbox = document.getElementsByName("skillField");
     let str3="";
-    for (var e of markedCheckbox) {
-        if (e.checked)
-          str3 +=`<li>${e.value}</li>`;
+    for (var g of markedCheckbox) {
+        if (g.checked)
+          str3 +=`<li>${g.value}</li>`;
         }
     document.getElementById("skillT").innerHTML=str3;
 
+    //Languages
+    var markcheck = document.getElementsByName("langField");
+    let str4="";
+    for(var h of markcheck){
+        if(h.checked)
+            str4 +=`<li>${h.value}</li>`;
+    }
+    document.getElementById("langT").innerHTML = str4;
 
-    document.getElementById("cv-form").style.display="none";
-    document.getElementById("cv-template").style.display="block";
+
+    //imgUploader
+    let file = document.getElementById("imgField").files[0]
+    
+    console.log(file);
+
+    let reader = new FileReader()
+
+    reader.readAsDataURL(file);
+
+    console.log(reader.result);
+
+    //set image to template
+    reader.onloadend = function(){
+        document.getElementById("imgTemplate").src = reader.result;
+    };
+    
+
+    // document.getElementById("cv-form").style.display="none";
+    // document.getElementById("cv-template").style.display="block";
 
 }
 
