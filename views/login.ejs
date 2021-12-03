@@ -1,17 +1,30 @@
 <%- include("partials/header") %>
 
+<link rel="stylesheet" href="/stylesheet/login.css">
+
+<div class="container">
+    <form action="">
+        <h3>Login here!</h3>
+        <div class="button">
+            <button id="login" class="btn" type="submit"><i class="icon-container fab fa-google"></i>Login with google</button>
+        </div>
+        <div class="line">
+        <p class="or">Or Login with username and password</p>
+        </div>
+        <div class="inp">
+        <label for="username" class="username"> User Name </label>
+        <input type="text" id="username" placeholder="Enter Username" />
+        
+        <label for="password">Password </label>
+        <input type="password" id="password" placeholder="Password goes here!"/>
+        </div>
+        <div class="button">
+        <button class="btn" type="submit">Login</button>
+        </div>
+    </form>
+</div>
 
 
-
-<!-- <link rel="stylesheet" href="/stylesheet/login.css"> -->
-<h1>This is a login page
-</h1>
-
-
-
-<!-- <button  onclick="Login()">Login</button> -->
-
-
-<script src="/javascript/login.js"></script>
+<script src="/javascript/google.js"></script>
 
 <%- include("partials/footer") %>

@@ -5,6 +5,7 @@ const app = express();
 const request  = require("request");
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const User = require('./public/models/user');
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -14,9 +15,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get("/", function(req, res){
+app.get("/", (req, res) =>{
     res.render("home");
 });
+
+app.get("/register", (req, res) =>{
+    res.render("register")
+})
 
 app.get("/login", function(req,res){
     res.render("login");

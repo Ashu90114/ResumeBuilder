@@ -3,6 +3,10 @@
     padding: 2px;
 }
 
+body{
+    font-family: poppins;
+}
+
 #first{
     background-color: whitesmoke;
 }
