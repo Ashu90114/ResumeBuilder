@@ -35,19 +35,26 @@
                     <a class="nav-link" href="/index">About</a>
                   </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0ww">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                   <!-- <li class="nav-item">
                     <a class="nav-link" href="#"><i class='bx bx-moon change-theme' title="Theme" id="theme-button"></i></a>
                   </li> -->
+                  <%if(!currentUser) {%>
                   <li class="nav-item">
                     <a class="nav-link" href="/login" >Login</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/register">SignUp</a>
                   </li>
+                  <% } else { %>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">Signed In As <%= currentUser.username %></a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+                  <% } %> 
+                  
                 </ul>
               </div>
             </div>

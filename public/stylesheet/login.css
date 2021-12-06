@@ -16,7 +16,7 @@
     margin: 45px auto;
     padding: 35px;
     width: 400px;
-    height: 490px;
+    height: 530px;
     background-color: #fff;
     border-radius: 4px;
   }
@@ -116,4 +116,18 @@
     box-shadow: 1px 1px 20px rgba(230, 91, 124, 0.8);
   }
   /* button-end */
-  
+  /* last paragraph-start */
+  .down {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 14px;
+    
+  }
+  .down p {
+    font-weight: bold;
+  }
+  .second-account{
+      margin-right: 5px;
+  }
+  /* last paragraph-end */
