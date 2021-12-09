@@ -106,6 +106,11 @@
   }
   /* form-end */
   /* button-start */
+
+  .button .google{
+    text-decoration:none;
+  }
+
   .button .btn {
     border: 0;
     cursor: pointer;
@@ -133,6 +138,11 @@
     /* align-items: center; */
     font-size: 14px;
     
+  }
+
+  .down .reg{
+    text-decoration:none;
+    color: red;
   }
   .down p {
     font-weight: bold;

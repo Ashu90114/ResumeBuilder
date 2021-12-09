@@ -96,6 +96,11 @@
   }
   /* form-end */
   /* button-start */
+
+  .button .google{
+    text-decoration: none;
+  }
+
   .button .btn {
     border: 0;
     cursor: pointer;
@@ -120,12 +125,18 @@
   .down {
     display: flex;
     justify-content: center;
+    
     /* align-items: center; */
     font-size: 14px;
     
   }
   .down p {
     font-weight: bold;
+  }
+
+  .down .sign{
+    text-decoration:none;
+    color: red;
   }
   .second-account{
       margin-right: 5px;

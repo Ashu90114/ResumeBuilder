@@ -1,12 +1,14 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const User = require('./public/models/user');
+require('./public/javascript/google')
 const mongoose  = require('mongoose');
-//const bcrypt =  require('bcrypt');
 const session =  require('express-session');
-
+const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
@@ -38,6 +40,8 @@ app.use(session({
     }  
 }));
 
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -46,7 +50,19 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
+
+    
+    //  res.locals.name= 
+    //  console.log(req.user.displayName);
+    //  res.locals.pic = 
+    //  console.log( req.user.photos[0].value);
+    //  res.locals.email = 
+    //  console.log( req.user.emails[0].value);
+
+    // console.log(req.user);
     res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
     next();
 });
 
@@ -88,10 +104,12 @@ app.post('/register', async (req, res) => {
     const registeredUser = await User.register(user, password);
     req.login(registeredUser, err => {
         if(err) return next(err);
+        req.flash('success', 'Welcome to Resume Builder!');
         res.redirect("/index");
     })
     } catch(e) {
-    console.log(e);
+        req.flash('error', e.message);
+        res.redirect("/register");
     }
 });
 
@@ -99,15 +117,24 @@ app.get("/login", (req, res) => {
     res.render("login");
 });
 
-app.post("/login", passport.authenticate('local', {failureFlash: true, failureRedirect:'/' }), (req, res) => { 
-    const redirectUrl = req.session.returnTo || "/";
+app.post("/login", passport.authenticate('local', {failureFlash: true, failureRedirect:'/login' }), (req, res) => { 
+    const redirectUrl = req.session.returnTo || "/resume";
     delete req.session.returnTo;
+    req.flash('success', 'Yeahh Welcome back!');
     res.redirect(redirectUrl);
 });
 
+
+//GOOGLE AUTH
+app.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/google/callback', passport.authenticate('google', {failureFlash:true, failureRedirect: '/login', successRedirect: '/resume'}));
+
+
 app.get("/logout", (req, res) => {
     req.logout();
-    res.redirect('/resume');
+    req.flash('success', 'See you later!');
+    res.redirect('/index');
 }) 
 
 
